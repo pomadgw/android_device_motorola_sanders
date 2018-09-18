@@ -94,9 +94,7 @@ PRODUCT_COPY_FILES +=  \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    libbt-vendor \
-    android.hardware.bluetooth@1.0-impl \
-    android.hardware.bluetooth@1.0-service
+    libbt-vendor
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -153,6 +151,10 @@ PRODUCT_PACKAGES += \
     vendor.display.config@1.0 \
     vendor.display.config@1.0_vendor
 
+PRODUCT_PACKAGES += \
+    vendor.display.color@1.0-service \
+    vendor.display.color@1.0-impl
+
 PRODUCT_PACKAGES += android.hardware.media.omx
 
 # RenderScript HAL
@@ -195,17 +197,15 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libgnss \
     libgnsspps \
-    android.hardware.gnss@1.0-impl-qti \
-    android.hardware.gnss@1.0-impl \
-    android.hardware.gnss@1.0-service-qti \
+    android.hardware.gnss@1.1-impl-qti \
+    android.hardware.gnss@1.1-service-qti \
     libqsap_sdk \
     libqsap_shim
 
 # Healthd
 PRODUCT_PACKAGES += \
-    android.hardware.health@1.0-convert \
-    android.hardware.health@1.0-impl \
-    android.hardware.health@1.0-service
+    android.hardware.health@2.0-impl \
+    android.hardware.health@2.0-service
 
 # IRSC
 PRODUCT_COPY_FILES += \
