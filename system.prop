@@ -109,13 +109,22 @@ persist.demo.hdmirotationlock=false
 ro.opengles.version=196610
 ro.sf.lcd_density=400
 persist.debug.wfd.enable=1
-sdm.debug.disable_skip_validate=1
 debug.gralloc.enable_fb_ubwc=1
 persist.camera.preview.ubwc=0
 persist.camera.video.ubwc=0
 persist.hwc.enable_vds=1
 debug.sf.recomputecrop=0
 debug.enable.sglscale=1
+
+#Disable Skip Validate
+sdm.debug.disable_skip_validate=1
+
+# Display Properties as per treble compliance
+vendor.gralloc.enable_fb_ubwc=1
+vendor.display.disable_skip_validate=1
+
+# Property to enable display default color mode
+vendor.display.enable_default_color_mode=1
 
 # FM
 ro.fm.transmitter=false
@@ -255,8 +264,17 @@ persist.data.df.dev_name=rmnet_usb0
 ro.sys.sdcardfs=false
 
 # Sensors
+ro.vendor.sensors.pmd=false
+ro.vendor.sensors.sta_detect=true
+ro.vendor.sensors.mot_detect=true
+ro.vendor.sensors.amd=false
+ro.vendor.sensors.rmd=false
+ro.vendor.sdk.sensors.gestures=false
+ro.vendor.sensors.facing=false
+ro.vendor.sensors.scrn_ortn=false
+ro.vendor.sensors.pedometer=false
+ro.vendor.sensors.glance_approach=false
 ro.hardware.sensors=sanders
-ro.mot.sensors.glance_approach=false
 
 #Trim properties
 ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
