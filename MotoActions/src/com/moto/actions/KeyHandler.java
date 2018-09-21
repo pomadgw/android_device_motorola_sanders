@@ -452,7 +452,7 @@ public class KeyHandler implements DeviceKeyHandler {
 
         boolean isFPScanCode = ArrayUtils.contains(sSupportedFPGestures, scanCode);
         if (!isFPScanCode) {
-            return event;
+            return null;
         }
 
         boolean isFPGestureEnabled = FileUtils.readOneLine(FP_HOME_NODE).equals("1");
@@ -462,12 +462,12 @@ public class KeyHandler implements DeviceKeyHandler {
 
         // We only want ACTION_UP event
         if (event.getAction() != KeyEvent.ACTION_UP) {
-            return null;
+            return event;
         }
-
+        
         if (isFPScanCode){
             if (fpGesturePending) {
-                return event;
+                return null;
             } else {
                 resetFPGestureDelay();
                 fpGesturePending = true;
@@ -482,7 +482,7 @@ public class KeyHandler implements DeviceKeyHandler {
         if (isFPScanCode) {
             if ((!isFPGestureEnabled) || (!isScreenOn && !isFPGestureEnabledOnScreenOff)) {
                 resetDoubleTapOnFP();
-                return event;
+                return null;
             }
             if (!isScreenOn && isFPGestureEnabledOnScreenOff) {
                 processFPScreenOffScancode(scanCode);
@@ -490,7 +490,7 @@ public class KeyHandler implements DeviceKeyHandler {
                 processFPScancode(scanCode);
             }
         }
-        return null;
+        return event;
     }
 
     private void processFPScancode(int scanCode) {
