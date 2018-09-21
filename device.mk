@@ -99,7 +99,7 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     libbson \
-    Camera2 \
+    SnapdragonCamera \
     libgui_vendor \
     camera.device@1.0-impl \
     camera.device@3.2-impl \
