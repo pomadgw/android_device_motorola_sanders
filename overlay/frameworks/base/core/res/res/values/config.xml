@@ -249,9 +249,6 @@
     <!-- Default LED off time for notification LED in milliseconds. -->
     <integer name="config_defaultNotificationLedOff">5000</integer>
 
-    <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-    <!--<bool name="config_intrusiveBatteryLed">true</bool>-->
-
     <!-- Default color for notification LED is white. -->
     <color name="config_defaultNotificationColor">#ff0000ff</color>
 
@@ -459,4 +456,8 @@
 	<bool name="config_smart_battery_available">true</bool>
 	<dimen name="config_dialogCornerRadius">8.0dip</dimen>
 	<dimen name="config_buttonCornerRadius">4.0dip</dimen>
+
+    <!-- Whether the device has fingeprint sensor or not -->
+    <bool name="config_hasFingerprintSensor">true</bool>
+
 </resources>

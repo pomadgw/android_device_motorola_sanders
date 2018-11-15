@@ -63,8 +63,9 @@ TARGET_INIT_VENDOR_LIB := libinit_sanders
 TARGET_RECOVERY_DEVICE_MODULES := libinit_sanders
 
 # Kernel
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237
-BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 vmalloc=350M androidboot.selinux=permissive
+TARGET_COMPILE_WITH_MSM_KERNEL := true
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 androidboot.bootdevice=7824900.sdhci firmware_class.path=/vendor/firmware_mnt/image loop.max_part=7
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
 BOARD_KERNEL_IMAGE_NAME := Image.gz
 BOARD_KERNEL_PAGESIZE := 2048
@@ -78,7 +79,6 @@ TARGET_KERNEL_CONFIG := sanders_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8953
 KERNEL_TOOLCHAIN := $(PWD)/prebuilts/gcc/$(HOST_OS)-x86/aarch64/aarch64-linux-android-4.9/bin
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-androidkernel-
-TARGET_USE_SDCLANG := true
 
 # Audio
 AUDIO_FEATURE_ENABLED_ALAC_OFFLOAD := true
@@ -124,6 +124,7 @@ BOARD_QTI_CAMERA_32BIT_ONLY := true
 BACKLIGHT_PATH := /sys/class/leds/lcd-backlight/brightness
 BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_NO_CHARGER_LED := true
+WITH_CM_CHARGER := false
 
 # DT2W
 TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
