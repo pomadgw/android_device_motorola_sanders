@@ -23,10 +23,6 @@
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
     <bool name="config_automatic_brightness_available">true</bool>
 
-    <!-- Minimum screen brightness setting allowed by the power manager.
-         The user is forbidden from setting the brightness below this level. -->
-    <integer name="config_screenBrightnessSettingMinimum">3</integer>
-
     <!-- Default screen brightness setting.
          Must be in the range specified by minimum and maximum. -->
     <integer name="config_screenBrightnessSettingDefault">88</integer>
@@ -259,15 +255,6 @@
     <!-- Default color for notification LED is white. -->
     <color name="config_defaultNotificationColor">#ff0000ff</color>
 
-    <!-- Does the notification LED support multiple colors?
-         Used to decide if the user can change the colors
-    <bool name="config_multiColorNotificationLed">true</bool>
-    -->
-
-    <!-- Does the battery LED support multiple colors?
-         Used to decide if the user can change the colors -->
-    <!--<bool name="config_multiColorBatteryLed">true</bool>-->
-
     <!-- Do the battery/notification LEDs support pulsing?
          Used to decide if we show pulse settings -->
     <!--<bool name="config_ledCanPulse">true</bool>-->
@@ -409,7 +396,7 @@
     <bool name="config_intrusiveNotificationLed">true</bool>
 
     <!-- Is the battery LED intrusive? Used to decide if there should be a disable option -->
-    <!-- <bool name="config_intrusiveBatteryLed">true</bool> -->
+    <bool name="config_intrusiveBatteryLed">true</bool> 
 
     <!-- Default value for proximity check on screen wake
          NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)-->
@@ -447,6 +434,9 @@
         <item>"/system/framework/boot-core-libart.vdex"</item>
     </string-array>
 
+   <!-- Should the pinner service pin the Camera application? -->
+   <bool name="config_pinnerCameraApp">true</bool>
+
    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
    in hardware. -->
    <bool name="config_setColorTransformAccelerated">true</bool>
@@ -462,9 +452,6 @@
 
     <!-- Flag specifying whether or not IMS will use the ImsResolver dynamically -->
     <bool name="config_dynamic_bind_ims">true</bool>
-
-    <!-- Whether navigation bar can be disabled (for devices with hardware keys) -->
-    <bool name="config_canDisableNavigationBar">true</bool>
 
     <!-- Whether or not swipe up gesture's opt-in setting is available on this device -->
     <bool name="config_swipe_up_gesture_setting_available">true</bool>
