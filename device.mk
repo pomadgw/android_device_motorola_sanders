@@ -135,6 +135,15 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     LineageActions
 
+#Lineage HALs
+# Trust
+PRODUCT_PACKAGES += \
+    vendor.lineage.trust@1.0-service
+
+# LiveDisplay native
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service-sdm
+
 # Display
 PRODUCT_PACKAGES += \
     copybit.msm8953 \
@@ -187,6 +196,9 @@ PRODUCT_PACKAGES += \
     android.hardware.biometrics.fingerprint@2.1-service.sanders \
     fingerprint.msm8953
 
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/releasetools/fp_c212.zip:/system/etc/fp_c212.zip \
+    $(LOCAL_PATH)/releasetools/patch_fingerprint.sh:/system/etc/patch_fingerprint.sh
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
