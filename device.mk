@@ -215,8 +215,8 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     libgnss \
     libgnsspps \
-    android.hardware.gnss@1.1-impl-qti \
-    android.hardware.gnss@1.1-service-qti \
+    android.hardware.gnss@1.0-impl-qti \
+    android.hardware.gnss@1.0-service-qti \
     libqsap_sdk \
     libqsap_shim
 
@@ -312,6 +312,11 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.1-service-qti
+
+# Powerhint configuration file
+PRODUCT_COPY_FILES += \
+     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml \
+     $(LOCAL_PATH)/configs/perfboostsconfig.xml:$(TARGET_COPY_OUT_VENDOR)/etc/perf/perfboostsconfig.xml
 
 # Qualcomm
 PRODUCT_COPY_FILES += \
